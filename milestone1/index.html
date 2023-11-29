@@ -59,7 +59,16 @@
                 </div>
                 <!-- CERCA O INIZIA -->
                 <!-- AMICI -->
-                <div>utenti</div>
+                <div class="friend">
+                    <ul>
+                        <li v-for="contact in contacts">
+                            <div class="user">
+                                <img :src="contact.avatar" alt="">
+                                <h3>{{contact.name}}</h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
                 <!-- /AMICI -->
             </main>
         </div>
@@ -68,8 +77,8 @@
                 <!-- CHAT AMICO -->
                 <div class="conversation-top">
                     <div class="user">
-                        <img :src="user[indexCurrent].avatar" alt="">
-                        <h3>{{user[indexCurrent].name}}</h3>
+                        <img :src="contacts[indexCurrent].avatar" alt="">
+                        <h3>{{contacts[indexCurrent].name}}</h3>
                     </div>
                     <div class="icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -79,9 +88,7 @@
                 </div>
                 <!-- CHAT AMICO -->
                 <!-- /CONVERSAZIONE -->
-                <div class="message">
-                    qua ci sono i messaggi
-                </div>
+                <div class="message"></div>
                 <!-- /CONVERSAZIONE -->
             </main>
             <!-- INVIO MESSAGGIO -->

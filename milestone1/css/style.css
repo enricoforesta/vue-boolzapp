@@ -31,8 +31,13 @@ img {
 }
 
 i {
-    padding: 7px;
+    padding: 10px;
     color: grey;
+    font-size: 21px;
+}
+
+li {
+    list-style: none;
 }
 
 /* DEBUG */
@@ -43,7 +48,7 @@ i {
 .container {
     display: flex;
     width: 80%;
-    height: 900px;
+    height: 100vh;
     margin: 20px auto;
     background-color: #eaeaea;
 }
@@ -77,6 +82,10 @@ i {
     padding: 5px;
 }
 
+.chat main {
+    height: calc(100% - 70px);
+}
+
 .conversation main {
     display: flex;
     flex-direction: column;
@@ -84,6 +93,9 @@ i {
     overflow-y: auto;
 }
 
+/* -----------
+CHAT
+-------------- */
 /* UTENTI CON FOTO */
 .user {
     display: flex;
@@ -116,9 +128,39 @@ i {
     flex-grow: 1;
     border: none;
 }
-.search i{
+
+.search i {
     background-color: white;
 }
 
-
 /* /CERCA O INIZIA */
+/* AMICI */
+.friend {
+    height: calc(100% - 125px);
+    background-color: white;
+    margin-right: 10px;
+}
+
+.friend li {
+    padding: 10px;
+}
+
+.friend ul {
+    height: 100%;
+    overflow-y: auto;
+}
+/* /AMICI */
+
+/* -----------
+/CHAT
+-------------- */
+
+/* -----------
+CONVERSATION
+-------------- */
+
+.message{
+    height: calc(100% - 70px);
+    margin-right: 10px;
+    background-image: url(../img/mine.jpg);
+}
