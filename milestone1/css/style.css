@@ -20,6 +20,7 @@ body {
 
 footer {
     height: 70px;
+    background-color: #f3eeea;
 }
 
 img {
@@ -40,6 +41,10 @@ li {
     list-style: none;
 }
 
+.conversation .user h5 {
+    color: grey;
+}
+
 /* DEBUG */
 
 
@@ -48,7 +53,7 @@ li {
 .container {
     display: flex;
     width: 80%;
-    height: 100vh;
+    height: calc(100vh - 40px);
     margin: 20px auto;
     background-color: #eaeaea;
 }
@@ -59,6 +64,7 @@ li {
 
 .conversation {
     flex-grow: 1;
+    height: 100%;
 }
 
 /* Creazione contenitore principale */
@@ -90,7 +96,6 @@ li {
     display: flex;
     flex-direction: column;
     height: calc(100% - 70px);
-    overflow-y: auto;
 }
 
 /* -----------
@@ -143,12 +148,14 @@ CHAT
 
 .friend li {
     padding: 10px;
+    border-bottom: solid 1px rgba(128, 128, 128, 0.3);
 }
 
 .friend ul {
     height: 100%;
     overflow-y: auto;
 }
+
 /* /AMICI */
 
 /* -----------
@@ -158,9 +165,57 @@ CHAT
 /* -----------
 CONVERSATION
 -------------- */
-
-.message{
+.message {
     height: calc(100% - 70px);
     margin-right: 10px;
     background-image: url(../img/mine.jpg);
+    overflow-y: auto;
 }
+
+/* CLASSI MESSAGGI */
+.message ul {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bubble{
+    width: 300px;
+    height: 60px;
+    padding: 15px 10px;
+    border-radius: 15px;
+}
+
+.send{
+    background-color: greenyellow;
+    align-self: flex-end;
+}
+.receive{
+    background-color: white;
+    align-self: flex-start;
+}
+
+/* /CLASSI MESSAGGI */
+
+/* INVIO MESSAGGIO */
+.send-message {
+    display: flex;
+    padding-top: 15px;
+}
+
+.send-message input {
+    flex-grow: 1;
+    border: none;
+    padding-left: 10px;
+}
+
+.send-message i {
+    margin: 0 10px;
+}
+
+/* /INVIO MESSAGGIO */
+/* -----------
+/CONVERSATION
+-------------- */

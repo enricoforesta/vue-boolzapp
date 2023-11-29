@@ -28,8 +28,10 @@
             <!-- NOME UTENTE -->
             <header>
                 <div class="user">
-                    <img :src="user[indexCurrent].avatar" alt="">
-                    <h3>{{user[indexCurrent].name}}</h3>
+                    <div><img :src="user[indexCurrent].avatar" alt=""></div>
+                    <div>
+                        <h3>{{user[indexCurrent].name}}</h3>
+                    </div>
                 </div>
                 <div class="icon">
                     <i class="fa-solid fa-circle-notch"></i>
@@ -63,8 +65,10 @@
                     <ul>
                         <li v-for="contact in contacts">
                             <div class="user">
-                                <img :src="contact.avatar" alt="">
-                                <h3>{{contact.name}}</h3>
+                                <div><img :src="contact.avatar" alt=""></div>
+                                <div>
+                                    <h3>{{contact.name}}</h3>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -77,8 +81,11 @@
                 <!-- CHAT AMICO -->
                 <div class="conversation-top">
                     <div class="user">
-                        <img :src="contacts[indexCurrent].avatar" alt="">
-                        <h3>{{contacts[indexCurrent].name}}</h3>
+                        <div><img :src="contacts[indexCurrent].avatar" alt=""></div>
+                        <div>
+                            <h3>{{contacts[indexCurrent].name}}</h3>
+                            <h5>Ultimo accesso oggi alle</h5>
+                        </div>
                     </div>
                     <div class="icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -88,12 +95,20 @@
                 </div>
                 <!-- CHAT AMICO -->
                 <!-- /CONVERSAZIONE -->
-                <div class="message"></div>
+                <div class="message">
+                    <ul>
+                        <li v-for="text in contacts[indexCurrent].messages" class="bubble">{{text.message}}</li>
+                    </ul>
+                </div>
                 <!-- /CONVERSAZIONE -->
             </main>
             <!-- INVIO MESSAGGIO -->
             <footer>
-                <div>icona cerca icona</div>
+                <div class="send-message">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
             </footer>
             <!-- /INVIO MESSAGGIO -->
         </div>
