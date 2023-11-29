@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzapp</title>
+    <!-- FONT GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <!-- /FONT GOOGLE -->
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- /FONT AWESOME -->
+
     <!-- MY CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- /MY CSS -->
@@ -14,40 +25,70 @@
 <body class="debug">
     <div id="app" class="container">
         <div class="chat">
+            <!-- NOME UTENTE -->
             <header>
-                <div>foto e nome</div>
-                <div>icone</div>
+                <div class="user">
+                    <img :src="user[indexCurrent].avatar" alt="">
+                    <h3>{{user[indexCurrent].name}}</h3>
+                </div>
+                <div class="icon">
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
             </header>
+            <!-- NOME UTENTE -->
             <main>
+                <!-- NOTIFICHE -->
                 <div class="notifications">
-                    <div>icona</div>
                     <div>
-                        <h3>ricevi not</h3>
-                        <h5>attiva</h5>
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div>
+                        <h4>Ricevi notifche di nuovi messaggi</h4>
+                        <h5>Attiva notifche deskpot</h5>
                     </div>
                 </div>
+                <!-- /NOTIFICHE -->
+                <!-- CERCA O INIZIA -->
                 <div class="search">
-                    <div>icona</div>
-                    <div>input</div>
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
+                <!-- CERCA O INIZIA -->
+                <!-- AMICI -->
                 <div>utenti</div>
+                <!-- /AMICI -->
             </main>
         </div>
         <div class="conversation">
             <main>
+                <!-- CHAT AMICO -->
                 <div class="conversation-top">
-                    <div>foto e nome
-                        <h4>ultimo</h4>
+                    <div class="user">
+                        <img :src="user[indexCurrent].avatar" alt="">
+                        <h3>{{user[indexCurrent].name}}</h3>
                     </div>
-                    <div>icone</div>
+                    <div class="icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid  fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
                 </div>
+                <!-- CHAT AMICO -->
+                <!-- /CONVERSAZIONE -->
                 <div class="message">
                     qua ci sono i messaggi
                 </div>
+                <!-- /CONVERSAZIONE -->
             </main>
+            <!-- INVIO MESSAGGIO -->
             <footer>
                 <div>icona cerca icona</div>
             </footer>
+            <!-- /INVIO MESSAGGIO -->
         </div>
     </div>
     <!-- VUE JS -->

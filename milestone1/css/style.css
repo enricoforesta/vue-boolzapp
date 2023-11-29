@@ -15,6 +15,24 @@ body {
             #dddbd2 15%,
             #dddbd2 100%);
     background-repeat: no-repeat;
+    font-family: 'Lato', sans-serif;
+}
+
+footer {
+    height: 70px;
+}
+
+img {
+    object-fit: cover;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+i {
+    padding: 7px;
+    color: grey;
 }
 
 /* DEBUG */
@@ -24,14 +42,14 @@ body {
 /* Creazione contenitore principale */
 .container {
     display: flex;
-    width: 70%;
+    width: 80%;
     height: 900px;
     margin: 20px auto;
     background-color: #eaeaea;
 }
 
 .chat {
-    width: 30%;
+    width: 35%;
 }
 
 .conversation {
@@ -39,29 +57,68 @@ body {
 }
 
 /* Creazione contenitore principale */
-
 .chat header,
 .conversation-top {
     display: flex;
     justify-content: space-between;
     height: 65px;
+    align-items: center;
 }
 
 .notifications {
     background-color: #8edafc;
     height: 80px;
     display: flex;
+    align-items: center;
 }
 
 .search {
     display: flex;
+    padding: 5px;
 }
 
-.conversation main{
+.conversation main {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: calc(100% - 70px);
+    overflow-y: auto;
 }
-.message{
+
+/* UTENTI CON FOTO */
+.user {
+    display: flex;
+    align-items: center;
+}
+
+/* /UTENTI CON FOTO */
+/* NOTIFICHE */
+.notifications i {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8edafc;
+}
+
+.notifications h5 {
+    color: grey;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+/* /NOTIFICHE */
+/* CERCA O INIZIA */
+.search input {
     flex-grow: 1;
+    border: none;
 }
+.search i{
+    background-color: white;
+}
+
+
+/* /CERCA O INIZIA */
