@@ -4,13 +4,64 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* UTILITES */
+
+/* COMMONS */
 body {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(to bottom,
             #009788 0%,
-            #009788 20%,
-            #dddbd2 20%,
+            #009788 15%,
+            #dddbd2 15%,
             #dddbd2 100%);
+    background-repeat: no-repeat;
+}
+
+/* DEBUG */
+
+
+/* UTILITES */
+/* Creazione contenitore principale */
+.container {
+    display: flex;
+    width: 70%;
+    height: 900px;
+    margin: 20px auto;
+    background-color: #eaeaea;
+}
+
+.chat {
+    width: 30%;
+}
+
+.conversation {
+    flex-grow: 1;
+}
+
+/* Creazione contenitore principale */
+
+.chat header,
+.conversation-top {
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
+}
+
+.notifications {
+    background-color: #8edafc;
+    height: 80px;
+    display: flex;
+}
+
+.search {
+    display: flex;
+}
+
+.conversation main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.message{
+    flex-grow: 1;
 }
