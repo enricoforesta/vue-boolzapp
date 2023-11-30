@@ -51,3 +51,11 @@ Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati
     ritorna l 'array di oggetti iniziale.
 
 3. Nel ciclo "v-for" che abbiamo usato per creare la chat, dobbiamo sostituire il ciclo che scorreva nell array iniziale, con il nostro nuovo Array filtrato. quindi passiamo direttamente la funzione.
+
+# Milestone 5 
+
+Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato.
+
+Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti.
+
+1. riga 72 devo cambiare date: in modo che ci sia prima l orario e poi la data, e poi stampare solo le prime 5 stringhe.
