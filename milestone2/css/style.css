@@ -1,0 +1,228 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* COMMONS */
+body {
+    height: 100vh;
+    background: linear-gradient(to bottom,
+            #009788 0%,
+            #009788 15%,
+            #dddbd2 15%,
+            #dddbd2 100%
+            );
+    background-repeat: no-repeat;
+    font-family: 'Lato', sans-serif;
+}
+
+footer {
+    height: 70px;
+    background-color: #f3eeea;
+}
+
+img {
+    object-fit: cover;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+i {
+    padding: 10px;
+    color: grey;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+.conversation .user h5 {
+    color: grey;
+}
+
+/* DEBUG */
+
+
+/* UTILITES */
+/* Creazione contenitore principale */
+.container {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    margin: 20px auto;
+    background-color: #eaeaea;
+}
+
+.chat {
+    width: 35%;
+}
+
+.conversation {
+    flex-grow: 1;
+    height: 100%;
+    background-color: #f3eeea;
+}
+/* /Creazione contenitore principale */
+
+.chat header,
+.conversation-top {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+    background-color: #eaeaea;
+}
+
+.notifications {
+    background-color: #8edafc;
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+    padding: 5px;
+}
+
+.chat main {
+    height: calc(100% - 70px);
+    background-color: #eaeaea;
+}
+
+.conversation main {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 70px);
+}
+
+/* -----------
+CHAT
+-------------- */
+/* UTENTI CON FOTO */
+.user {
+    display: flex;
+    align-items: center;
+}
+
+/* /UTENTI CON FOTO */
+/* NOTIFICHE */
+.notifications i {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8edafc;
+}
+
+.notifications h5 {
+    color: grey;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+/* /NOTIFICHE */
+/* CERCA O INIZIA */
+.search input {
+    flex-grow: 1;
+    border: none;
+}
+
+.search i {
+    background-color: white;
+}
+
+/* /CERCA O INIZIA */
+/* AMICI */
+.friend {
+    height: calc(100% - 121px);
+    background-color: white;
+    margin-right: 10px;
+}
+
+.friend li {
+    padding: 10px;
+    border-bottom: solid 1px rgba(128, 128, 128, 0.3);
+}
+.friend li:hover{
+    background-color: grey;
+    cursor: pointer;
+}
+
+.friend ul {
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* /AMICI */
+
+/* -----------
+/CHAT
+-------------- */
+
+/* -----------
+CONVERSATION
+-------------- */
+.message {
+    height: calc(100% - 70px);
+    margin-right: 10px;
+    background-image: url(../img/mine.jpg);
+    overflow-y: auto;
+}
+
+/* CLASSI MESSAGGI */
+.message ul {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bubble{
+    width: 300px;
+    height: 60px;
+    padding: 15px 10px;
+    border-radius: 15px;
+}
+
+.sent{
+    background-color: greenyellow;
+    align-self: flex-end;
+}
+.received{
+    background-color: white;
+    align-self: flex-start;
+}
+
+/* /CLASSI MESSAGGI */
+
+/* INVIO MESSAGGIO */
+.send-message {
+    display: flex;
+    padding-top: 15px;
+}
+
+.send-message input {
+    flex-grow: 1;
+    border: none;
+    padding-left: 10px;
+}
+
+.send-message i {
+    margin: 0 10px;
+}
+
+/* /INVIO MESSAGGIO */
+/* -----------
+/CONVERSATION
+-------------- */
