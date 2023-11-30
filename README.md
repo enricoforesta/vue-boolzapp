@@ -41,3 +41,13 @@ Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente r
 Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
 # Logica
+
+1. Nel Js, ci creiamo una propietà dove inseriremo la stringa della barra di ricerca.
+
+2. Creiamo una funzione, per filtrare le parole
+---SE 
+    il campo di testo per la ricerca è diverso da vuoto, filtriamo il contenuto e con ".includes" per controllare se la stringa è presente, poi usiamo ".map" cosi ci restituisce un array, con lo stesso contenuto del precedente, ma solo con i nomi presenti nella ricerca.
+--- ALTRIMENTI 
+    ritorna l 'array di oggetti iniziale.
+
+3. Nel ciclo "v-for" che abbiamo usato per creare la chat, dobbiamo sostituire il ciclo che scorreva nell array iniziale, con il nostro nuovo Array filtrato. quindi passiamo direttamente la funzione.
