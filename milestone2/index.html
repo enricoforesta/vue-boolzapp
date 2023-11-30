@@ -62,7 +62,7 @@
                 <!-- AMICI -->
                 <div class="friend">
                     <ul>
-                        <li v-for="contact in contacts">
+                        <li v-for="(contact ,i) in contacts" @click="currentChat(i)">
                             <div class="user">
                                 <div><img :src="contact.avatar" alt=""></div>
                                 <div>
@@ -96,7 +96,7 @@
                 <!-- CONVERSAZIONE -->
                 <div class="message">
                     <ul>
-                        <li v-for="text in contacts[indexCurrent].messages" class="bubble" :class="text.status === 'sent' ? 'sent' : 'received'">{{text.message}}</li>
+                        <li v-for="(text, i) in contacts[indexCurrent].messages" class="bubble" :class="text.status === 'sent' ? 'sent' : 'received'">{{text.message}}</li>
                     </ul>
                 </div>
                 <!-- /CONVERSAZIONE -->

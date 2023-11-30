@@ -175,5 +175,10 @@ createApp({
                 }
             ]
         }
+    },
+    methods:{
+        currentChat(i){
+            this.indexCurrent = i;
+        }
     }
 }).mount("#app")
