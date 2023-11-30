@@ -105,7 +105,7 @@
             <footer>
                 <div class="send-message">
                     <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input v-model="inputText" @keyup.enter="sendText" type="text" placeholder="Inserisci un messaggio">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </footer>

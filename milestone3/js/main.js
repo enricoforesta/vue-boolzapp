@@ -5,6 +5,7 @@ createApp({
     data() {
         return {
             indexCurrent: 0,
+            inputText: "",
             user: [
                 {
                     name: "Enrico",
@@ -176,9 +177,27 @@ createApp({
             ]
         }
     },
-    methods:{
-        currentChat(i){
+    methods: {
+        currentChat(i) {
             this.indexCurrent = i;
+        },
+        //Funzione per visualizzare i messaggi, e risposta automatica.
+        sendText() {
+            if (this.inputText.trim() !== "") {
+                this.contacts[this.indexCurrent].messages.push({
+                    date: '10/01/2020 15:50:00',
+                    message: this.inputText,
+                    status: 'sent'
+                });
+                setTimeout(() => {
+                    this.contacts[this.indexCurrent].messages.push({
+                        date: '10/01/2020 15:50:00',
+                        message: "ok ;)",
+                        status: 'received'
+                    });
+                }, 1000);
+            }
+            this.inputText = "";
         }
     }
 }).mount("#app")
