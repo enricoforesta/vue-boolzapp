@@ -41,12 +41,10 @@ li {
     list-style: none;
 }
 
-.conversation .user h5 {
+h5 {
     color: grey;
+    margin-top: 5px;
 }
-
-/* DEBUG */
-
 
 /* UTILITES */
 /* Creazione contenitore principale */
@@ -99,7 +97,18 @@ li {
     flex-direction: column;
     height: calc(100% - 70px);
 }
-
+/* ORA */
+.time{
+    flex-grow: 1;
+    align-self: baseline;
+    text-align: end;
+    font-size: 11px;
+    color: grey;
+}
+.bubble .time{
+    align-self: flex-end;
+}
+/* /ORA */
 /* -----------
 CHAT
 -------------- */
@@ -124,9 +133,7 @@ CHAT
 }
 
 .notifications h5 {
-    color: grey;
     text-decoration: underline;
-    margin-top: 5px;
 }
 
 /* /NOTIFICHE */
@@ -145,7 +152,6 @@ CHAT
 .friend {
     height: calc(100% - 121px);
     background-color: white;
-    margin-right: 10px;
 }
 
 .friend li {
@@ -173,7 +179,6 @@ CONVERSATION
 -------------- */
 .message {
     height: calc(100% - 70px);
-    margin-right: 10px;
     background-image: url(/img/mine.jpg);
     overflow-y: auto;
 }
@@ -192,6 +197,7 @@ CONVERSATION
     height: 60px;
     padding: 15px 10px;
     border-radius: 15px;
+    display: flex;
 }
 
 .sent{
