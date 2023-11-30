@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+    <!-- FONT GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <!-- /FONT GOOGLE -->
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- /FONT AWESOME -->
+
+    <!-- MY CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- /MY CSS -->
+</head>
+
+<body class="debug">
+    <div id="app" class="container">
+        <div class="chat">
+            <!-- NOME UTENTE -->
+            <header>
+                <div class="user">
+                    <div><img :src="user[0].avatar" alt=""></div>
+                    <div>
+                        <h3>{{user[0].name}}</h3>
+                    </div>
+                </div>
+                <div class="icon">
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </header>
+            <!-- /NOME UTENTE -->
+            <main>
+                <!-- NOTIFICHE -->
+                <div class="notifications">
+                    <div>
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div>
+                        <h4>Ricevi notifche di nuovi messaggi</h4>
+                        <h5>Attiva notifche deskpot</h5>
+                    </div>
+                </div>
+                <!-- /NOTIFICHE -->
+                <!-- CERCA O INIZIA -->
+                <div class="search">
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
+                <!-- /CERCA O INIZIA -->
+                <!-- AMICI -->
+                <div class="friend">
+                    <ul>
+                        <li v-for="(contact ,i) in contacts" @click="currentChat(i)">
+                            <div class="user">
+                                <div><img :src="contact.avatar" alt=""></div>
+                                <div>
+                                    <h3>{{contact.name}}</h3>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /AMICI -->
+            </main>
+        </div>
+        <div class="conversation">
+            <main>
+                <!-- CHAT AMICO -->
+                <div class="conversation-top">
+                    <div class="user">
+                        <div><img :src="contacts[indexCurrent].avatar" alt=""></div>
+                        <div>
+                            <h3>{{contacts[indexCurrent].name}}</h3>
+                            <h5>Ultimo accesso oggi alle</h5>
+                        </div>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid  fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+                <!-- /CHAT AMICO -->
+                <!-- CONVERSAZIONE -->
+                <div class="message">
+                    <ul>
+                        <li v-for="(text, i) in contacts[indexCurrent].messages" class="bubble" :class="text.status === 'sent' ? 'sent' : 'received'">{{text.message}}</li>
+                    </ul>
+                </div>
+                <!-- /CONVERSAZIONE -->
+            </main>
+            <!-- INVIO MESSAGGIO -->
+            <footer>
+                <div class="send-message">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+            </footer>
+            <!-- /INVIO MESSAGGIO -->
+        </div>
+    </div>
+    <!-- VUE JS -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- /VUE JS -->
+    <!-- MY JS -->
+    <script src="js/main.js"></script>
+    <!-- /MY JS -->
+</body>
+
+</html>
