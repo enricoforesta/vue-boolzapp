@@ -19,7 +19,6 @@
     <!-- MY CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- /MY CSS -->
-
 </head>
 
 <body class="debug">
@@ -28,9 +27,9 @@
             <!-- NOME UTENTE -->
             <header>
                 <div class="user">
-                    <div><img :src="user[indexCurrent].avatar" alt=""></div>
+                    <div><img :src="user[0].avatar" alt=""></div>
                     <div>
-                        <h3>{{user[indexCurrent].name}}</h3>
+                        <h3>{{user[0].name}}</h3>
                     </div>
                 </div>
                 <div class="icon">
@@ -39,7 +38,7 @@
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
             </header>
-            <!-- NOME UTENTE -->
+            <!-- /NOME UTENTE -->
             <main>
                 <!-- NOTIFICHE -->
                 <div class="notifications">
@@ -59,7 +58,7 @@
                     </div>
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
-                <!-- CERCA O INIZIA -->
+                <!-- /CERCA O INIZIA -->
                 <!-- AMICI -->
                 <div class="friend">
                     <ul>
@@ -93,11 +92,11 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <!-- CHAT AMICO -->
-                <!-- /CONVERSAZIONE -->
+                <!-- /CHAT AMICO -->
+                <!-- CONVERSAZIONE -->
                 <div class="message">
                     <ul>
-                        <li v-for="text in contacts[indexCurrent].messages" class="bubble">{{text.message}}</li>
+                        <li v-for="text in contacts[indexCurrent].messages" class="bubble" :class="text.status === 'sent' ? 'sent' : 'received'">{{text.message}}</li>
                     </ul>
                 </div>
                 <!-- /CONVERSAZIONE -->
