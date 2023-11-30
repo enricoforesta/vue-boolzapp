@@ -98,10 +98,9 @@
                 <!-- CONVERSAZIONE -->
                 <div class="message">
                     <ul>
-                        <li v-for="(text, i) in contacts[indexCurrent].messages" 
-                        class="bubble" 
-                        :class="text.status === 'sent' ? 'sent' : 'received'">
-                        {{text.message}} <span class="time">12:00</span> </li>
+                        <li v-for="(text, i) in contacts[indexCurrent].messages" class="bubble"
+                            :class="text.status === 'sent' ? 'sent' : 'received'">
+                            {{text.message}} <span class="time">12:00</span> </li>
                     </ul>
                 </div>
                 <!-- /CONVERSAZIONE -->
@@ -120,6 +119,9 @@
     <!-- VUE JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- /VUE JS -->
+    <!-- LUXON JS -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+    <!-- LUXON JS -->
     <!-- MY JS -->
     <script src="js/main.js"></script>
     <!-- /MY JS -->

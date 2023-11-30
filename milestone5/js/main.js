@@ -1,6 +1,8 @@
 "use strict"
 const { createApp } = Vue;
 
+const { DateTime } = luxon;
+
 createApp({
     data() {
         return {
@@ -52,7 +54,7 @@ createApp({
                             status: 'received'
                         },
                         {
-                            date: '20/03/2020 16:35:00',
+                            date: '20/03/2020 16:35:22',
                             message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                             status: 'sent'
                         }
@@ -178,8 +180,9 @@ createApp({
             ]
         }
     },
-    computed(){
-        
+    mounted(){
+        console.log(this.contacts[0].messages[2].date);
+        console.log(DateTime.now(this.contacts[0].messages[2].date).toLocaleString())
     },
     methods: {
         currentChat(i) {
@@ -221,3 +224,4 @@ createApp({
         }
     }
 }).mount("#app")
+
