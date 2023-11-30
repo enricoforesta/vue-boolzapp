@@ -6,6 +6,7 @@ createApp({
         return {
             indexCurrent: 0,
             inputText: "",
+            searchText: "",
             user: [
                 {
                     name: "Enrico",
@@ -177,11 +178,14 @@ createApp({
             ]
         }
     },
+    computed(){
+        
+    },
     methods: {
         currentChat(i) {
             this.indexCurrent = i;
         },
-        //Funzione per visualizzare i messaggi, e risposta automatica.
+        //FUNZIONE PER VISUALIZZARE I MESSAGGI. E RISPOSTA AUTOMATICA.
         sendText() {
             if (this.inputText.trim() !== "") {
                 this.contacts[this.indexCurrent].messages.push({
@@ -198,6 +202,22 @@ createApp({
                 }, 1000);
             }
             this.inputText = "";
+        },
+        // FUNZIONE PER FILTRARE GLI ELEMENTI
+        filterContacts() {
+            if (this.searchText.trim() !== '') {
+                return this.contacts.filter(
+                    (contact) => contact.name.toLowerCase().includes(
+                        this.searchText.toLowerCase())
+                    ).map((contact) => {
+                        return {
+                            ...contact,
+                            name: contact.name,
+                        };
+                    });
+            }else{
+                return this.contacts;
+            }
         }
     }
 }).mount("#app")

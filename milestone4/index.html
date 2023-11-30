@@ -56,13 +56,13 @@
                     <div>
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input v-model="searchText" type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <!-- /CERCA O INIZIA -->
                 <!-- AMICI -->
                 <div class="friend">
                     <ul>
-                        <li v-for="(contact ,i) in contacts" @click="currentChat(i)">
+                        <li v-for="(contact ,i) in filterContacts()" @click="currentChat(i)">
                             <div class="user">
                                 <div><img :src="contact.avatar" alt=""></div>
                                 <div>
