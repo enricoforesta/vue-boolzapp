@@ -35,3 +35,9 @@ Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente r
 2. Nella stessa riga aggiugiamo un "keyup.enter", e richiamiamo la funzione "sendText", dove pushiamo un oggetto, che ha come messaggio input inserito, e status "sent", cosi verrà visualizzato come messaggio inviato.
 
 3. Nella stessa funzione, aggiungiamo un "setTimout" in modo che ogni volta che inviamo un messaggio, ci risponde automaticamente dopo un intervallo.
+
+# Milestone 4
+
+Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+
+# Logica
