@@ -11,10 +11,11 @@ body {
             #009788 0%,
             #009788 15%,
             #dddbd2 15%,
-            #dddbd2 100%
-            );
+            #dddbd2 100%);
     background-repeat: no-repeat;
     font-family: 'Lato', sans-serif;
+    height: 100vh;
+    padding: 20px 0;
 }
 
 footer {
@@ -27,6 +28,7 @@ img {
     width: 50px;
     border-radius: 50%;
     margin-left: 10px;
+    margin-right: 10px;
     margin-top: 5px;
 }
 
@@ -46,25 +48,34 @@ h5 {
     margin-top: 5px;
 }
 
+.icon {
+    margin-right: 5px;
+}
+
 /* UTILITES */
 /* Creazione contenitore principale */
 .container {
     display: flex;
     width: 80%;
-    height: calc(100vh - 40px);
-    margin: 20px auto;
     background-color: #eaeaea;
+    height: 100%;
+    margin: 0px auto;
 }
 
 .chat {
     width: 35%;
+    flex-shrink: 0;
+    border-right: solid 1px rgba(128, 128, 128, 0.3);
+    overflow: hidden;
 }
 
 .conversation {
     flex-grow: 1;
     height: 100%;
     background-color: #f3eeea;
+    border-right: solid 1px rgba(128, 128, 128, 0.3);
 }
+
 /* /Creazione contenitore principale */
 
 .chat header,
@@ -85,11 +96,14 @@ h5 {
 .search {
     display: flex;
     padding: 5px;
+    border: solid 1px rgba(128, 128, 128, 0.3);
+    ;
 }
 
 .chat main {
+    display: flex;
+    flex-direction: column;
     height: calc(100% - 70px);
-    background-color: #eaeaea;
 }
 
 .conversation main {
@@ -97,17 +111,20 @@ h5 {
     flex-direction: column;
     height: calc(100% - 70px);
 }
+
 /* ORA */
-.time{
+.time {
     flex-grow: 1;
     align-self: baseline;
     text-align: end;
     font-size: 11px;
     color: grey;
 }
-.bubble .time{
+
+.bubble .time {
     align-self: flex-end;
 }
+
 /* /ORA */
 /* -----------
 CHAT
@@ -141,31 +158,43 @@ CHAT
 .search input {
     flex-grow: 1;
     border: none;
+    padding-left: 10px;
 }
 
 .search i {
     background-color: white;
+    font-size: 11px;
+    border-right: solid 1px rgba(128, 128, 128, 0.3);
+    ;
 }
 
 /* /CERCA O INIZIA */
 /* AMICI */
 .friend {
-    height: calc(100% - 121px);
     background-color: white;
+    overflow: auto;
 }
 
 .friend li {
     padding: 10px;
     border-bottom: solid 1px rgba(128, 128, 128, 0.3);
 }
-.friend li:hover{
+
+.friend li:last-child {
+    border-bottom: 0;
+}
+
+.friend li:hover {
     background-color: grey;
     cursor: pointer;
 }
 
 .friend ul {
     height: 100%;
-    overflow-y: auto;
+}
+
+.friend img {
+    width: 60px;
 }
 
 /* /AMICI */
@@ -192,7 +221,7 @@ CONVERSATION
     gap: 15px;
 }
 
-.bubble{
+.bubble {
     width: 300px;
     height: 60px;
     padding: 15px 10px;
@@ -200,11 +229,12 @@ CONVERSATION
     display: flex;
 }
 
-.sent{
+.sent {
     background-color: greenyellow;
     align-self: flex-end;
 }
-.received{
+
+.received {
     background-color: white;
     align-self: flex-start;
 }
