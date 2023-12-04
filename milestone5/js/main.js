@@ -1,7 +1,7 @@
 "use strict"
 const { createApp } = Vue;
 
-const { DateTime } = luxon;
+// const { DateTime } = luxon;
 
 createApp({
     data() {
@@ -181,12 +181,13 @@ createApp({
         }
     },
     mounted(){
-        console.log(this.contacts[0].messages[2].date);
-        console.log(DateTime.now(this.contacts[0].messages[2].date).toLocaleString())
+        // console.log(this.contacts[0].messages[2].date);
+        // console.log(DateTime.now(this.contacts[0].messages[2].date).toLocaleString())
     },
     methods: {
         currentChat(i) {
             this.indexCurrent = i;
+
         },
         //FUNZIONE PER VISUALIZZARE I MESSAGGI. E RISPOSTA AUTOMATICA.
         sendText() {
@@ -208,20 +209,26 @@ createApp({
         },
         // FUNZIONE PER FILTRARE GLI ELEMENTI
         filterContacts() {
-            if (this.searchText.trim() !== '') {
-                return this.contacts.filter(
-                    (contact) => contact.name.toLowerCase().includes(
-                        this.searchText.toLowerCase())
-                    ).map((contact) => {
-                        return {
-                            ...contact,
-                            name: contact.name,
-                        };
-                    });
-            }else{
-                return this.contacts;
-            }
+            const searchText = this.searchText.trim().toLowerCase();
+            this.contacts.forEach(contact => {
+                contact.visible = contact.name.toLowerCase().includes(searchText);
+            });
         }
+        // filterContacts() {
+        //     if (this.searchText.trim() !== '') {
+        //         return this.contacts.filter(
+        //             (contact) => contact.name.toLowerCase().includes(
+        //                 this.searchText.toLowerCase())
+        //             ).map((contact) => {
+        //                 return {
+        //                     ...contact,
+        //                     name: contact.name,
+        //                 };
+        //             });
+        //     }else{
+        //         return this.contacts;
+        //     }
+        // }
     }
 }).mount("#app")
 

@@ -27,7 +27,7 @@
             <!-- NOME UTENTE -->
             <header>
                 <div class="user">
-                    <div><img :src="user[0].avatar" alt=""></div>
+                    <div><img :src="user[0].avatar" :alt="user[0].name"></div>
                     <div>
                         <h3>{{user[0].name}}</h3>
                     </div>
@@ -56,20 +56,20 @@
                     <div>
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <input v-model="searchText" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input v-model="searchText" @input="filterContacts()" type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <!-- /CERCA O INIZIA -->
                 <!-- AMICI -->
                 <div class="friend">
                     <ul>
-                        <li v-for="(contact ,i) in filterContacts()" @click="currentChat(i)">
+                        <li v-for="(contact ,i) in contacts" v-show="contact.visible" @click="currentChat(i)">
                             <div class="user">
                                 <div><img :src="contact.avatar" alt="contact.name"></div>
                                 <div>
                                     <h3>{{contact.name}}</h3>
                                     <h5>{{contact.messages[contact.messages.length - 1].message}}</h5>
                                 </div>
-                                <span class="time">12:00</span>
+                                <span class="time">{{contact.messages[contact.messages.length - 1].date}}</span>
                             </div>
                         </li>
                     </ul>
