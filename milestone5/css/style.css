@@ -208,7 +208,7 @@ CONVERSATION
 -------------- */
 .message {
     height: calc(100% - 70px);
-    background-image: url(/img/mine.jpg);
+    background-image: url(../img/mine.jpg);
     overflow-y: auto;
 }
 
