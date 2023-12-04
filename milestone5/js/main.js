@@ -1,7 +1,7 @@
 "use strict"
 const { createApp } = Vue;
 
-// const { DateTime } = luxon;
+const { DateTime } = luxon;
 
 createApp({
     data() {
@@ -9,6 +9,7 @@ createApp({
             indexCurrent: 0,
             inputText: "",
             searchText: "",
+            access: "",
             user: [
                 {
                     name: "Enrico",
@@ -181,13 +182,14 @@ createApp({
         }
     },
     mounted() {
-        // console.log(this.contacts[0].messages[2].date);
-        // console.log(DateTime.now(this.contacts[0].messages[2].date).toLocaleString())
+        this.updateLastAccess();
+        console.log(this.contacts[0].messages[2].date);
+        //  console.log(DateTime.fromObject())
     },
     methods: {
         currentChat(i) {
             this.indexCurrent = i;
-
+            this.updateLastAccess();
         },
         //FUNZIONE PER VISUALIZZARE I MESSAGGI. E RISPOSTA AUTOMATICA.
         sendText() {
@@ -203,12 +205,24 @@ createApp({
         },
         autoReply() {
             setTimeout(() => {
-                this.contacts[this.indexCurrent].messages.push({
+                let newMessage = {
                     date: '10/01/2020 15:55:00',
                     message: "ok ;)",
                     status: 'received'
-                });
+                };
+                this.contacts[this.indexCurrent].messages.push(newMessage);
+                this.access = newMessage.date.slice(11, 16);
             }, 1000);
+            this.updateLastAccess();
+        },
+        updateLastAccess() {
+            let messages = this.contacts[this.indexCurrent].messages;
+            for (let i = messages.length - 1; i >= 0; i--) {
+                if (messages[i].status === 'received') {
+                    this.access = messages[i].date.slice(11, 16);
+                    break;
+                }
+            }
         },
         // FUNZIONE PER FILTRARE GLI ELEMENTI
         filterContacts() {

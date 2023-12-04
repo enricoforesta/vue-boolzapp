@@ -56,7 +56,8 @@
                     <div>
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <input v-model="searchText" @input="filterContacts()" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input v-model="searchText" @input="filterContacts()" type="text"
+                        placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <!-- /CERCA O INIZIA -->
                 <!-- AMICI -->
@@ -69,7 +70,8 @@
                                     <h3>{{contact.name}}</h3>
                                     <h5>{{contact.messages[contact.messages.length - 1].message}}</h5>
                                 </div>
-                                <span class="time">{{contact.messages[contact.messages.length - 1].date.slice(11,16)}}</span>
+                                <span class="time">{{contact.messages[contact.messages.length -
+                                    1].date.slice(11,16)}}</span>
                             </div>
                         </li>
                     </ul>
@@ -85,7 +87,7 @@
                         <div><img :src="contacts[indexCurrent].avatar" alt=""></div>
                         <div>
                             <h3>{{contacts[indexCurrent].name}}</h3>
-                            <h5>Ultimo accesso oggi alle 12:00</h5>
+                            <h5>Ultimo accesso oggi alle {{access}}</h5>
                         </div>
                     </div>
                     <div class="icon">
@@ -100,7 +102,7 @@
                     <ul>
                         <li v-for="(text, i) in contacts[indexCurrent].messages" class="bubble"
                             :class="text.status === 'sent' ? 'sent' : 'received'">
-                            {{text.message}} <span class="time">12:00</span> </li>
+                            {{text.message}} <span class="time">{{text.date.slice(11,16)}}</span> </li>
                     </ul>
                 </div>
                 <!-- /CONVERSAZIONE -->
