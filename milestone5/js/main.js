@@ -6,6 +6,7 @@ const { DateTime } = luxon;
 createApp({
     data() {
         return {
+            indexUser: 0,
             indexCurrent: 0,
             inputText: "",
             searchText: "",
@@ -183,8 +184,9 @@ createApp({
     },
     mounted() {
         this.updateLastAccess();
-        console.log(this.contacts[0].messages[2].date);
-        //  console.log(DateTime.fromObject())
+        const dateNow = DateTime.local().toLocaleString(DateTime.DATE_SHORT);
+        const timeNow = DateTime.local().toLocaleString(DateTime.TIME_SIMPLE);
+        console.log(dateNow + " " + timeNow);    
     },
     methods: {
         currentChat(i) {
@@ -231,21 +233,6 @@ createApp({
                 contact.visible = contact.name.toLowerCase().includes(searchText);
             });
         }
-        // filterContacts() {
-        //     if (this.searchText.trim() !== '') {
-        //         return this.contacts.filter(
-        //             (contact) => contact.name.toLowerCase().includes(
-        //                 this.searchText.toLowerCase())
-        //             ).map((contact) => {
-        //                 return {
-        //                     ...contact,
-        //                     name: contact.name,
-        //                 };
-        //             });
-        //     }else{
-        //         return this.contacts;
-        //     }
-        // }
     }
 }).mount("#app")
 

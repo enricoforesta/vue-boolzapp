@@ -27,9 +27,9 @@
             <!-- NOME UTENTE -->
             <header>
                 <div class="user">
-                    <div><img :src="user[0].avatar" :alt="user[0].name"></div>
+                    <div><img :src="user[indexUser].avatar" :alt="user[indexUser].name"></div>
                     <div>
-                        <h3>{{user[0].name}}</h3>
+                        <h3>{{user[indexUser].name}}</h3>
                     </div>
                 </div>
                 <div class="icon">
@@ -65,7 +65,7 @@
                     <ul>
                         <li v-for="(contact ,i) in contacts" v-show="contact.visible" @click="currentChat(i)">
                             <div class="user">
-                                <div><img :src="contact.avatar" alt="contact.name"></div>
+                                <div><img :src="contact.avatar" :alt="contact.name"></div>
                                 <div>
                                     <h3>{{contact.name}}</h3>
                                     <h5>{{contact.messages[contact.messages.length - 1].message}}</h5>
@@ -84,7 +84,7 @@
                 <!-- CHAT AMICO -->
                 <div class="conversation-top">
                     <div class="user">
-                        <div><img :src="contacts[indexCurrent].avatar" alt=""></div>
+                        <div><img :src="contacts[indexCurrent].avatar" :alt="contacts[indexCurrent].name"></div>
                         <div>
                             <h3>{{contacts[indexCurrent].name}}</h3>
                             <h5>Ultimo accesso oggi alle {{access}}</h5>
